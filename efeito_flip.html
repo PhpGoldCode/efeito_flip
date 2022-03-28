@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+    .html,
+    body {
+        min-height: 400px;
+    }
+
+    .flip-container {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        perspective: 1000px;
+    }
+
+    .flipper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-container:nth-child(1):hover .flipper {
+        /*efeito no eixo vertical*/
+        transform: rotateY(180deg);
+    }
+
+    .flip-container:nth-child(2):hover .flipper {
+        /*efeito no eixo horizontal*/
+        transform: rotateX(180deg);
+    }
+
+    .flip-container:nth-child(3):hover .flipper {
+        /*efeito no eixo vertical e diagonal*/
+        transform: rotateY(180deg) rotateZ(180deg);
+    }
+
+    .front,
+    .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container:nth-child(2) .back,
+    .flip-container:nth-child(3) .back {
+        transform: rotateX(180deg);
+    }
+</style>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+<center>
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front">
+                <img src="caminho/pasta/sua_imagem1.png" />
+            </div>
+            <div class="back">
+                <img src="caminho/pasta/sua_imagem2.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front">
+                <img src="caminho/pasta/sua_imagem1.png" />
+            </div>
+            <div class="back">
+                <img src="caminho/pasta/sua_imagem2.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-container">
+        <div class="flipper">
+            <div class="front">
+                <img src="caminho/pasta/sua_imagem1.png" />
+            </div>
+            <div class="back">
+                <img src="caminho/pasta/sua_imagem2.png" />
+            </div>
+        </div>
+    </div>
+</center>
+
+</body>
+
+</html>
